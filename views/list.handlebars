@@ -1,0 +1,40 @@
+<div class="container">	
+	
+	<nav style="float: right">
+  		<ul class="pagination">
+    		<li>{{{prevMonthUrl refMonth}}}
+    		<li>{{{nextMonthUrl refMonth}}}
+    	</ul>
+    </nav>
+
+    <h1>{{formatDate refMonth "mmmm yyyy"}}</h1>
+	
+	<table class="table">
+		<tr>
+	    	<th>Data</td>
+	    	<th>Ore</td>
+	    	<th>Ingresso</td>
+	    	<th>Uscita</td>
+	    </tr>
+	  {{#each items}}
+	    <tr>
+	    	<td>{{formatDate this.start "dd/mm/yyyy"}}</td>
+	    	<td>{{this.hours}}</td>
+	    	<td>{{formatDate this.start "h:MM"}}</td>
+	    	<td>{{formatDate this.end "H:MM"}}</td>
+	    </tr>
+	  {{/each}}
+	  	<tr>
+	  		<td></td>
+	  		<td><b>{{totHours}}</b></td>
+	  		<td></td>
+	  		<td></td>
+	  	</tr>
+	</table>
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<a href="/">Ingresso / Uscita</a>
+	</div>
+</footer>

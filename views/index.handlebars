@@ -1,0 +1,27 @@
+
+<div class="bg-info text-center">
+  {{#if enter}}
+    <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Ingresso: {{formatDate enter "dd/mm/yyyy, H:MM"}}
+  {{/if}}
+  {{#if exit}}
+    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Uscita: {{formatDate exit "dd/mm/yyyy, H:MM"}}
+  {{/if}}
+</div>  
+
+<div class="container" style="text-align:center">
+	<form action="/clock" method="POST">
+		<div class="center-block">
+			<input type="submit" {{#if enter}}disabled{{/if}} name="action" value="Ingresso" class="btn btn-{{#if enter}}disabled{{else}}primary{{/if}} btn-circle">
+		</div>
+
+		<div class="center-block">
+			<input type="submit" {{#unless enter}}disabled{{/unless}} name="action" value="Uscita" class="btn btn-{{#if enter}}danger{{else}}disabled{{/if}} btn-circle">
+		</div>
+	</form>
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<a href="/month">Ore mese</a>
+	</div>
+</footer>

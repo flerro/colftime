@@ -1,0 +1,4 @@
+/bin/export
+/cfg
+/node_modules
+npm-debug.log
