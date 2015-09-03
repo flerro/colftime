@@ -1,4 +1,4 @@
 /bin/export
-/cfg
+*.env
 /node_modules
 npm-debug.log

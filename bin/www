@@ -1,14 +1,26 @@
 #!/usr/bin/env node
 
 /**
+ * Env vars
+ */
+
+var debug = require('debug')('colftime:server');
+
+var fs = require('fs');
+var path = require('path');
+var env = require('node-env-file');
+var envFile = path.join(__dirname, '../','.env')
+
+if (fs.existsSync(envFile)) {
+    debug('Loading ENV vars from: ' + envFile)
+    env(envFile);
+} 
+
+/**
  * Module dependencies.
  */
 
-var env = require('node-env-file');
-env(__dirname + './../cfg/prod.env');
-
 var app = require('../app');
-var debug = require('debug')('colftime:server');
 var http = require('http');
 
 /**

@@ -1,0 +1,9 @@
+
+<div class="container" style="text-align:center; padding-top: 40px">
+	<form action="/verify" method="POST">
+		<input type="text" name="PIN"  placeholder="Enter PIN"> 
+		<input type="submit" value="Verify">
+		{{#if error}}<span class="text-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {{error}}</span>{{/if}}
+	</form>
+</div>
+
