@@ -13,7 +13,7 @@ var db = mongojs(connection, ['colftime'])
 //     console.log('database connected')
 // });
 
-var logError = function(err) { /* if (err) */ console.log('DB Error >>' + err) };
+var logError = function(err) {  if (err) console.log('DB Error >>' + err) };
 
 exports.clockIn = function() {
 	db.colftime.save({clock: 'IN', at: new Date()}, logError)

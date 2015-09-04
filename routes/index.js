@@ -74,7 +74,7 @@ router.get('/pin', function(req, res, next) {
 });
 
 router.post('/verify', function(req, res, next) {
-	var twelveMonths = 10 * 60 * 1000; //12 * 30 * 24 * 3600 * 1000;
+	var twelveMonths = 12 * 30 * 24 * 3600 * 1000;
 	var pinOk = process.env.COLFTIME_PIN == req.body.PIN
 	if (pinOk) {
 		res.cookie('remember', 1, { maxAge: twelveMonths });
